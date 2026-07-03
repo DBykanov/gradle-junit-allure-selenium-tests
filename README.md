@@ -10,6 +10,7 @@ commands :
 Used technologies:
 - java
 - gradle
+- selenium
 - junit (especially: @ParameterizedTest, 
 - jackson
 - lombok

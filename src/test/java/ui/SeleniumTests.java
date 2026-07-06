@@ -1,5 +1,6 @@
 package ui;
 
+import models.PublicLimits;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -7,7 +8,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.LandingPage;
+import pages.PublicLimitsPage;
 import pages.RegisterPage;
+import utils.apiHelpers.ApiHelper;
 
 import java.util.Random;
 
@@ -81,5 +84,20 @@ public class SeleniumTests extends BaseTest {
 
         Assertions.assertTrue(registerPage.isRegistered(emailText),
                 "The success header or registered email " + emailText + " isn't displayed");
+    }
+
+    @Test
+    public void publicLimitsTest(){
+        PublicLimitsPage plp = new LandingPage(driver)
+                .openLP()
+                .clickOnLimits();
+
+        Assertions.assertTrue(
+                plp.limitsAreDisplayed(),
+                "The public limits aren't displayed");
+
+        //ApiHelper apiHelper = new ApiHelper();
+        //PublicLimits publicLimits = apiHelper.getPublicLimits();
+
     }
 }

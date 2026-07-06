@@ -11,7 +11,8 @@ Used technologies:
 - java
 - gradle
 - selenium
-- junit (especially: @ParameterizedTest, 
+- junit (especially: @ParameterizedTest,
+- rest assured
 - jackson
 - lombok
 - custom tags
